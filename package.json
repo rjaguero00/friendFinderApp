@@ -1,0 +1,25 @@
+{
+  "name": "friendfinderapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "friends.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjaguero00/friendFinderApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjaguero00/friendFinderApp/issues"
+  },
+  "homepage": "https://github.com/rjaguero00/friendFinderApp#readme"
+}
