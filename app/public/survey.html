@@ -181,7 +181,7 @@
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                <h4>The music god's have spoken</h4>
+                <h4>Your brand new friend!</h4>
                 <h5 id="matchName"></h5>
                 <img id="matchPic" src="" alt="No Image" width=250px>
                 <div class="modal-header">
@@ -218,8 +218,8 @@
             if (validateForm()) {
                 // Create an object for the user"s data
                 var newFriendEntry = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
                     scores: [
                         $("#lyric1").val(),
                         $("#lyric2").val(),
@@ -238,7 +238,7 @@
                 $.post(currentURL + "/api/friends", newFriendEntry, function (data) {
                     //Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#matchName").text(data.name);
-                    $("#matchPic").attr("src", data.profilePic);
+                    $("#matchPic").attr("src", data.photo);
                 });
                 // Show the modal with the best match
                 $('.modal').modal();
