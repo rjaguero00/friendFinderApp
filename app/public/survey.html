@@ -3,160 +3,265 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Company</title>
+    <title>Find Some Company</title>
 
+
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="finder.css">
+
 </head>
 
+
 <body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Survey Questions</h1>
+            <br>
+            <hr>
+            <form method="POST" action="/api/friends">
+                <h3>
+                    <strong>About You</strong>
+                </h3>
+                <fieldset class="form-group">
+                    <label for="name">Name (Required)</label>
+                    <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="photo">Link to Photo Image (Required)</label>
+                    <input type="text" class="form-control" placeholder="photo" id="photo" name="photo" required>
+                </fieldset>
+                <hr>
 
-    <div class="container">
+                <h3>
+                    <strong>Question 1</strong>
+                </h3>
+                <h4>"We got company coming over, would it kill you to put some pants on?"</h4>
+                <select class="chosen-select" id="lyric1">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h2>Survey Questions</h2>
-        <hr>
+                <h3>
+                    <strong>Question 2</strong>
+                </h3>
+                <h4>"Oops, I did it again, I played with your heart got lost in the game."</h4>
+                <select class="chosen-select" id="lyric2">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>About You</strong>
-        </h3>
-        <h4>Name (Required)</h4>
-        <input type="text" id="name" class="form-control" required>
+                <h3>
+                    <strong>Question 3</strong>
+                </h3>
+                <h4>"Big money, big booty bitches man that shit gon' be death of me!"</h4>
+                <select class="chosen-select" id="lyric3">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h4>Link to Photo Image (Required)</h4>
-        <input type="text" id="photo" class="form-control" required>
+                <h3>
+                    <strong>Question 4</strong>
+                </h3>
+                <h4>"Drinking every night because we drink to my accomplishments!"</h4>
+                <select class="chosen-select" id="lyric4">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <hr>
+                <h3>
+                    <strong>Question 5</strong>
+                </h3>
+                <h4>"Ooooh you, shook me all night long."</h4>
+                <select class="chosen-select" id="lyric5">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 1</strong>
-        </h3>
-        <h4>"We got company coming over, would it kill you to put some pants on?"</h4>
-        <select class="chosen-select" id="lyric1">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+                <h3>
+                    <strong>Question 6</strong>
+                </h3>
+                <h4>"All the single ladies, all the single ladies, now put your hands up!"</h4>
+                <select class="chosen-select" id="lyric6">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 2</strong>
-        </h3>
-        <h4>"Oops, I did it again, I played with your heart got lost in the game."</h4>
-        <select class="chosen-select" id="lyric2">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+                <h3>
+                    <strong>Question 7</strong>
+                </h3>
+                <h4>"My milk shake brings all the boys to the yard, and they're like. It's better than yours."</h4>
+                <select class="chosen-select" id="lyric7">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 3</strong>
-        </h3>
-        <h4>"Big money, big booty bitchesm man that shit gon' be death of me!"</h4>
-        <select class="chosen-select" id="lyric3">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+                <h3>
+                    <strong>Question 8</strong>
+                </h3>
+                <h4>"Last night, come home work sucks, I know she left me roses by the stairs surprises let me know she cares!"</h4>
+                <select class="chosen-select" id="lyric8">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 4</strong>
-        </h3>
-        <h4>"Drinking every night because we drink to my accomplishments!"</h4>
-        <select class="chosen-select" id="lyric4">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+                <h3>
+                    <strong>Question 9</strong>
+                </h3>
+                <h4>"Picture this we were both butt naked banging on the bathroom floor"</h4>
+                <select class="chosen-select" id="lyric9">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 5</strong>
-        </h3>
-        <h4>"Ooooh you, shook me all night long."</h4>
-        <select class="chosen-select" id="lyric5">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+                <h3>
+                    <strong>Question 10</strong>
+                </h3>
+                <h4>"Strollin' to the party like my name is El ninio, Well I'm hangin' out drinking in the back of an El camino."</h4>
+                <select class="chosen-select" id="lyric10">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
 
-        <h3>
-            <strong>Question 6</strong>
-        </h3>
-        <h4>"All the single ladies, all the single ladies, now put your hands up!"</h4>
-        <select class="chosen-select" id="lyric6">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+            </form>
+            <br>
 
-        <h3>
-            <strong>Question 7</strong>
-        </h3>
-        <h4>"My milk shake brings all the boys to the yard, and they're like. It's better than yours."</h4>
-        <select class="chosen-select" id="lyric7">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+            <div class="text-right">
+                <button type="submit" class="btn btn-danger btn-lg" id="submit-btn">
+                    <span class="glyphicon glyphicon-ok"></span> New Friends!
+                </button>
+            </div>
+        </div>
+    </div>
 
-        <h3>
-            <strong>Question 8</strong>
-        </h3>
-        <h4>"Last night, come home work sucks, I know she left me roses by the stairs surprises let me know she cares!"</h4>
-        <select class="chosen-select" id="lyric8">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+    <hr>
 
-        <h3>
-            <strong>Question 9</strong>
-        </h3>
-        <h4>"Cool jewelry shining so bright strawberry champagne on ice lucky for you, that's what I like, that's what I like!"</h4>
-        <select class="chosen-select" id="lyric9">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h4>The music god's have spoken</h4>
+                <h5 id="matchName"></h5>
+                <img id="matchPic" src="" alt="No Image" width=250px>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">Okay</button>
+                    <h2 class="modal-title"></h2>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <h3>
-            <strong>Question 10</strong>
-        </h3>
-        <h4>"Strollin' to the party like my name is El ninio, Well I'm hangin' out drinking in the back of an El camino."</h4>
-        <select class="chosen-select" id="lyric10">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
+
+    <script type="text/javascript">
+        // Capture the form inputs
+        $("#submit-btn").on("click", function (event) {
+            event.preventDefault();
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                $(".chosen-select").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+            // If all required fields are filled
+            if (validateForm()) {
+                // Create an object for the user"s data
+                var newFriendEntry = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#lyric1").val(),
+                        $("#lyric2").val(),
+                        $("#lyric3").val(),
+                        $("#lyric4").val(),
+                        $("#lyric5").val(),
+                        $("#lyric6").val(),
+                        $("#lyric7").val(),
+                        $("#lyric8").val(),
+                        $("#lyric9").val(),
+                        $("#lyric10").val()
+                    ]
+                };
+                var currentURL = window.location.origin;
+                //AJAX posts the data to friends API.
+                $.post(currentURL + "/api/friends", newFriendEntry, function (data) {
+                    //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                    $("#matchName").text(data.name);
+                    $("#matchPic").attr("src", data.profilePic);
+                });
+                // Show the modal with the best match
+                $('.modal').modal();
+                //clear form after submission
+                $('#name').val("");
+                $('#photo').val("");
+                $('#q1').val("");
+                $('#q2').val("");
+                $('#q3').val("");
+                $('#q4').val("");
+                $('#q5').val("");
+                $('#q6').val("");
+                $('#q7').val("");
+                $('#q8').val("");
+                $('#q9').val("");
+                $('#q10').val("");
+            } else {
+                alert("Please fill out ALL fields before submitting survey!")
+            }
+            // return false;
+        });
+
+    </script>
 
 </body>
 
